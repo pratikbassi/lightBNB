@@ -1,0 +1,11 @@
+CREATE TABLE rates (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id REFERENCES users(id) NOT NULL ON DELETE CASCADE,
+  property_id REFERENCES properties(id) NOT NULL ON DELETE CASCADE,
+  start_date TIMESTAMP NOT NULL,
+  end_date TIMESTAMP NOT NULL,
+  new_cost INTEGER NOT NULL,
+  old_cost INTEGER NOT NULL
+);
+
+CREATE TABLE guest_review
